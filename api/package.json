@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "types": "module",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch server.ts",
     "build": "tsc",
+    "start": "tsx server.ts",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },

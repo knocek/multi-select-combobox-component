@@ -1,0 +1,64 @@
+{
+  "tags": [
+    {
+      "id": "tag-1",
+      "name": "React"
+    },
+    {
+      "id": "tag-2",
+      "name": "TypeScript"
+    },
+    {
+      "id": "tag-3",
+      "name": "JavaScript"
+    },
+    {
+      "id": "tag-4",
+      "name": "CSS"
+    },
+    {
+      "id": "tag-5",
+      "name": "HTML"
+    }
+  ],
+  "users": [
+    {
+      "id": "user-1",
+      "firstName": "Anna",
+      "lastName": "Nowak",
+      "email": "anna.nowak@example.com"
+    },
+    {
+      "id": "user-2",
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jan.kowalski@example.com"
+    },
+    {
+      "id": "user-3",
+      "firstName": "Marta",
+      "lastName": "Zielinska",
+      "email": "marta.zielinska@example.com"
+    }
+  ],
+  "addresses": [
+    {
+      "id": "address-1",
+      "city": "Warsaw",
+      "street": "Marszalkowska 10",
+      "postalCode": "00-001"
+    },
+    {
+      "id": "address-2",
+      "city": "Krakow",
+      "street": "Dluga 5",
+      "postalCode": "31-001"
+    },
+    {
+      "id": "address-3",
+      "city": "Gdansk",
+      "street": "Dlugi Targ 20",
+      "postalCode": "80-001"
+    }
+  ]
+}
