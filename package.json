@@ -1,0 +1,52 @@
+{
+  "name": "multi-select-combobox-component",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"api/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"api/**/*.{ts,js}\" --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck --prefix frontend && npm run typecheck --prefix api",
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run typecheck && npm run lint"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knocek/multi-select-combobox-component.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/knocek/multi-select-combobox-component/issues"
+  },
+  "homepage": "https://github.com/knocek/multi-select-combobox-component#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "concurrently": "^10.0.3",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.1"
+  }
+}
