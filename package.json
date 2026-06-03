@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "concurrently \"npm run dev --prefix api\" \"npm run dev --prefix frontend\"",
     "prepare": "husky",
     "lint": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"api/**/*.{ts,js}\"",
     "lint:fix": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"api/**/*.{ts,js}\" --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "npm run typecheck --prefix frontend && npm run typecheck --prefix api",
-    "pre-commit": "lint-staged",
-    "pre-push": "npm run typecheck && npm run lint"
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [

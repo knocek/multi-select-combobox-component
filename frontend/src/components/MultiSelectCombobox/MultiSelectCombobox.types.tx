@@ -1,0 +1,17 @@
+export type MultiSelectComboboxProps<TItem> = {
+  items: TItem[];
+  selectedItems: TItem[];
+  onChange: (selectedItems: TItem[]) => void;
+
+  getItemLabel: (item: TItem) => string;
+  getItemValue: (item: TItem) => string;
+
+  onCreateItem?: (inputValue: string) => TItem | Promise<TItem>;
+
+  placeholder?: string;
+  ariaLabel: string;
+
+  disabled?: boolean;
+  loading?: boolean;
+  maxSelected?: number;
+};
