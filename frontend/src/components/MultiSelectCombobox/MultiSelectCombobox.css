@@ -1,4 +1,17 @@
 .multi-select-combobox {
+  --msc-border: #cbd5e1;
+  --msc-bg: #fff;
+  --msc-text: #1e293b;
+  --msc-text-muted: #64748b;
+  --msc-chip-bg: #e2e8f0;
+  --msc-hover-bg: #f1f5f9;
+  --msc-hover-text: #1e293b;
+  --msc-highlighted-bg: #e2e8f0;
+  --msc-highlighted-text: #1e293b;
+  --msc-suggestion-color: #9ca3af;
+  --msc-input-bg: transparent;
+  --msc-radius: 8px;
+
   width: 100%;
   max-width: 520px;
 }
@@ -10,8 +23,9 @@
   align-items: center;
   min-height: 44px;
   padding: 8px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  border: 1px solid var(--msc-border);
+  border-radius: var(--msc-radius);
+  background: var(--msc-bg);
 }
 
 .multi-select-combobox__chip {
@@ -20,7 +34,8 @@
   align-items: center;
   padding: 4px 8px;
   border-radius: 999px;
-  background: #e2e8f0;
+  background: var(--msc-chip-bg);
+  color: var(--msc-text);
   font-size: 14px;
 }
 
@@ -29,6 +44,7 @@
   background: transparent;
   cursor: pointer;
   font-size: 16px;
+  color: var(--msc-text);
 }
 
 .multi-select-combobox__input {
@@ -37,19 +53,23 @@
   border: 0;
   outline: none;
   font-size: 14px;
+  color: var(--msc-text);
+  background: var(--msc-input-bg);
 }
 
 .multi-select-combobox__status {
   margin-top: 8px;
   font-size: 14px;
+  color: var(--msc-text-muted);
 }
 
 .multi-select-combobox__list {
   margin: 6px 0 0;
   padding: 4px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  border: 1px solid var(--msc-border);
+  border-radius: var(--msc-radius);
   list-style: none;
+  background: var(--msc-bg);
 }
 
 .multi-select-combobox__option {
@@ -60,20 +80,23 @@
   background: transparent;
   cursor: pointer;
   text-align: left;
+  color: var(--msc-text);
 }
 
 .multi-select-combobox__option:hover {
-  background: #f1f5f9;
+  background: var(--msc-hover-bg);
+  color: var(--msc-hover-text);
 }
 
 .multi-select-combobox__empty {
   padding: 8px;
-  color: #64748b;
+  color: var(--msc-text-muted);
   font-size: 14px;
 }
 
 .multi-select-combobox__option--highlighted {
-  background: #e2e8f0;
+  background: var(--msc-highlighted-bg);
+  color: var(--msc-highlighted-text);
 }
 
 .multi-select-combobox__input-wrapper {
@@ -94,11 +117,17 @@
 }
 
 .multi-select-combobox__inline-completion {
-  color: #9ca3af;
+  color: var(--msc-suggestion-color);
 }
 
 .multi-select-combobox__input {
   position: relative;
   width: 100%;
-  background: transparent;
+  background: var(--msc-input-bg);
+}
+
+.multi-select-combobox__error {
+  margin-top: 6px;
+  color: #b91c1c;
+  font-size: 14px;
 }

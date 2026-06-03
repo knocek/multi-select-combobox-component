@@ -53,18 +53,8 @@ function validateItem(collection: CollectionName, item: unknown): asserts item i
     return;
   }
 
-  if (collection === 'users') {
-    for (const field of ['firstName', 'lastName', 'email']) {
-      if (!hasStringField(item, field)) {
-        throw new Error(`Field "${field}" is required and must be a non-empty string.`);
-      }
-    }
-
-    return;
-  }
-
   if (collection === 'addresses') {
-    for (const field of ['city', 'street', 'postalCode']) {
+    for (const field of ['city', 'street']) {
       if (!hasStringField(item, field)) {
         throw new Error(`Field "${field}" is required and must be a non-empty string.`);
       }

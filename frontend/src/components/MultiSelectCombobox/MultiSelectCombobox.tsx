@@ -1,17 +1,6 @@
-// Inlined type to avoid missing external declaration file
-export interface MultiSelectComboboxProps<TItem> {
-  items: TItem[];
-  selectedItems: TItem[];
-  onChange: (items: TItem[]) => void;
-  getItemLabel: (item: TItem) => string;
-  getItemValue: (item: TItem) => string | number;
-  onCreateItem?: (value: string) => Promise<TItem> | TItem | void;
-  placeholder?: string;
-  ariaLabel?: string;
-  disabled?: boolean;
-  loading?: boolean;
-  maxSelected?: number;
-}
+import { useEffect, useRef } from 'react';
+
+import type { MultiSelectComboboxProps } from './MultiSelectCombobox.types';
 import { useMultiSelectCombobox } from './useMultiSelectCombobox';
 
 import './MultiSelectCombobox.css';
@@ -45,6 +34,8 @@ export function MultiSelectCombobox<TItem>({
     openDropdown,
     autoCompleteValue,
     inlineSuggestion,
+    closeDropdown,
+    createError,
   } = useMultiSelectCombobox({
     items,
     selectedItems,
@@ -55,6 +46,19 @@ export function MultiSelectCombobox<TItem>({
     onCreateItem,
   });
 
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        closeDropdown();
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [closeDropdown]);
+
   const listboxId = 'multi-select-combobox-listbox';
   const activeOptionId =
     highlightedIndex >= 0 && filteredItems[highlightedIndex]
@@ -62,7 +66,7 @@ export function MultiSelectCombobox<TItem>({
       : undefined;
 
   return (
-    <div className="multi-select-combobox">
+    <div className="multi-select-combobox" ref={wrapperRef}>
       <div className="multi-select-combobox__control">
         {selectedItems.map((item) => (
           <span key={getItemValue(item)} className="multi-select-combobox__chip">
@@ -113,7 +117,7 @@ export function MultiSelectCombobox<TItem>({
         </p>
       )}
 
-      {!loading && isOpen && inputValue && (
+      {!loading && isOpen && canSelectMore && (
         <ul
           id={listboxId}
           role="listbox"
@@ -165,6 +169,12 @@ export function MultiSelectCombobox<TItem>({
             </li>
           )}
         </ul>
+      )}
+
+      {createError && (
+        <p className="multi-select-combobox__error" role="alert">
+          {createError}
+        </p>
       )}
     </div>
   );

@@ -21,44 +21,22 @@
       "name": "HTML"
     }
   ],
-  "users": [
-    {
-      "id": "user-1",
-      "firstName": "Anna",
-      "lastName": "Nowak",
-      "email": "anna.nowak@example.com"
-    },
-    {
-      "id": "user-2",
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "email": "jan.kowalski@example.com"
-    },
-    {
-      "id": "user-3",
-      "firstName": "Marta",
-      "lastName": "Zielinska",
-      "email": "marta.zielinska@example.com"
-    }
-  ],
+
   "addresses": [
     {
       "id": "address-1",
       "city": "Warsaw",
-      "street": "Marszalkowska 10",
-      "postalCode": "00-001"
+      "street": "Marszalkowska"
     },
     {
       "id": "address-2",
       "city": "Krakow",
-      "street": "Dluga 5",
-      "postalCode": "31-001"
+      "street": "Dluga"
     },
     {
       "id": "address-3",
       "city": "Gdansk",
-      "street": "Dlugi Targ 20",
-      "postalCode": "80-001"
+      "street": "Dlugi Targ"
     }
   ]
 }

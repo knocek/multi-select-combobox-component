@@ -21,6 +21,9 @@ export function useMultiSelectCombobox<TItem>({
 }: UseMultiSelectComboboxParams<TItem>) {
   const [inputValue, setInputValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+
+  const [createError, setCreateError] = useState('');
+
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const [isCreating, setIsCreating] = useState(false);
 
@@ -63,6 +66,7 @@ export function useMultiSelectCombobox<TItem>({
   function handleInputChange(value: string) {
     setInputValue(value);
     setHighlightedIndex(0);
+    setCreateError('');
 
     if (value.trim()) {
       openDropdown();
@@ -78,10 +82,15 @@ export function useMultiSelectCombobox<TItem>({
 
     try {
       setIsCreating(true);
+      setCreateError('');
+
       const createdItem = await onCreateItem(normalizedInput);
+
       onChange([...selectedItems, createdItem]);
       setInputValue('');
       closeDropdown();
+    } catch (error) {
+      setCreateError(error instanceof Error ? error.message : 'Could not create item.');
     } finally {
       setIsCreating(false);
     }
@@ -159,6 +168,11 @@ export function useMultiSelectCombobox<TItem>({
     if (event.key === 'Escape') {
       event.preventDefault();
       closeDropdown();
+      return;
+    }
+
+    if (event.key === 'Tab') {
+      closeDropdown();
     }
   }
 
@@ -175,6 +189,7 @@ export function useMultiSelectCombobox<TItem>({
     openDropdown,
     closeDropdown,
     canCreateItem,
+    createError,
     isCreating,
     handleCreateItem,
     autoCompleteValue,
