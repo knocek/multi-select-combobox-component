@@ -1,6 +1,6 @@
 # Multi select combobox component
 
-![MultiSelect Combobox demo](/docs/mocup.gif)
+![MultiSelect Combobox demo](/docs/mockup.gif)
 
 To run app use commands below:
 
