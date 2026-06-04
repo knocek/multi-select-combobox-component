@@ -2,14 +2,18 @@
   "name": "multi-select-combobox-component",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "api",
+    "frontend"
+  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix api\" \"npm run dev --prefix frontend\"",
+    "dev": "concurrently \"npm run dev -w api\" \"npm run dev -w frontend\"",
     "prepare": "husky",
     "lint": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"api/**/*.{ts,js}\"",
     "lint:fix": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"api/**/*.{ts,js}\" --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "npm run typecheck --prefix frontend && npm run typecheck --prefix api",
+    "typecheck": "npm run typecheck -w frontend && npm run typecheck -w api",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
