@@ -12,6 +12,7 @@
   --msc-input-bg: transparent;
   --msc-radius: 8px;
 
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   width: 100%;
   max-width: 520px;
 }
@@ -26,6 +27,8 @@
   border: 1px solid var(--msc-border);
   border-radius: var(--msc-radius);
   background: var(--msc-bg);
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  cursor: text;
 }
 
 .multi-select-combobox__chip {
@@ -37,6 +40,7 @@
   background: var(--msc-chip-bg);
   color: var(--msc-text);
   font-size: 14px;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
 }
 
 .multi-select-combobox__remove-button {
@@ -50,11 +54,16 @@
 .multi-select-combobox__input {
   flex: 1;
   min-width: 120px;
+  z-index: 2;
   border: 0;
   outline: none;
-  font-size: 14px;
   color: var(--msc-text);
   background: var(--msc-input-bg);
+  position: relative;
+  width: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .multi-select-combobox__status {
@@ -81,6 +90,9 @@
   cursor: pointer;
   text-align: left;
   color: var(--msc-text);
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .multi-select-combobox__option:hover {
@@ -103,27 +115,31 @@
   position: relative;
   flex: 1;
   min-width: 120px;
+  display: flex;
+  align-items: center;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .multi-select-combobox__inline-suggestion {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  margin-left: 2px;
+  padding: 0;
   display: flex;
   align-items: center;
   pointer-events: none;
   white-space: pre;
-  font: inherit;
   color: transparent;
+  font: system-ui, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.4;
+  font-size: 14px;
 }
 
 .multi-select-combobox__inline-completion {
   color: var(--msc-suggestion-color);
-}
-
-.multi-select-combobox__input {
-  position: relative;
-  width: 100%;
-  background: var(--msc-input-bg);
 }
 
 .multi-select-combobox__error {

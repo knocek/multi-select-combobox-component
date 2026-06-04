@@ -82,6 +82,11 @@ h2 {
   }
 }
 
-p {
-  margin: 10px 0;
+.mockup-example {
+  margin: 0 auto 48px;
+  padding: 0 16px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 32px;
+  }
 }

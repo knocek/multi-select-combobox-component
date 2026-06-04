@@ -10,8 +10,13 @@ function App() {
         This demo shows a reusable generic multi-select combobox component connected to a mock API.
       </p>
 
-      <TagsExample />
-      <AddressesExample />
+      <div className="mockup-example">
+        <TagsExample />
+      </div>
+
+      <div className="mockup-example">
+        <AddressesExample />
+      </div>
     </main>
   );
 }
