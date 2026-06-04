@@ -62,6 +62,34 @@ function validateItem(collection: CollectionName, item: unknown): asserts item i
   }
 }
 
+function itemExsists<K extends CollectionName>(
+  collection: K,
+  itemToCheck: CollectionItemMap[K],
+): boolean {
+  return mockData[collection].some((existingItem) => {
+    if (collection === 'tags') {
+      return (
+        'name' in existingItem &&
+        'name' in itemToCheck &&
+        existingItem.name.trim().toLowerCase() === itemToCheck.name.trim().toLowerCase()
+      );
+    }
+
+    if (collection === 'addresses') {
+      return (
+        'city' in existingItem &&
+        'street' in existingItem &&
+        'city' in itemToCheck &&
+        'street' in itemToCheck &&
+        existingItem.city.trim().toLowerCase() === itemToCheck.city.trim().toLowerCase() &&
+        existingItem.street.trim().toLowerCase() === itemToCheck.street.trim().toLowerCase()
+      );
+    }
+
+    return false;
+  });
+}
+
 export function createItem<K extends CollectionName>(
   collection: K,
   item: unknown,
@@ -69,6 +97,10 @@ export function createItem<K extends CollectionName>(
   validateItem(collection, item);
 
   const typedItem = item as CollectionItemMap[K];
+
+  if (itemExsists(collection, typedItem)) {
+    throw new Error('Item with the same name already exists.');
+  }
 
   mockData[collection].push(typedItem);
 

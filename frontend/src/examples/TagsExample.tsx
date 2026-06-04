@@ -25,7 +25,7 @@ export function TagsExample() {
   return (
     <section>
       <h2>Tags example</h2>
-      <p>Simple example using tag objects with id and name.</p>
+      <p>Example using tag objects with id and name.</p>
 
       {error && <p>{error}</p>}
 
@@ -53,7 +53,7 @@ export function TagsExample() {
       {/*debug for selected tags */}
 
       {/*
-
+      <p>Debug for selected tags.</p>
       {selectedTags.length > 0 ? (
         <pre>{JSON.stringify(selectedTags, null, 2)}</pre>
       ) : (

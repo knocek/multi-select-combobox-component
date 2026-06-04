@@ -29,7 +29,10 @@ export function AddressesExample() {
   return (
     <section>
       <h2>Addresses example</h2>
-      <p>Example using address objects. Street numbers are trimmed automatically.</p>
+      <p>
+        Example using address objects with id, city, street.<br></br>
+        Street numbers are trimmed automatically.
+      </p>
 
       {error && <p>{error}</p>}
 
@@ -56,13 +59,15 @@ export function AddressesExample() {
         }}
       />
 
+      {/*
       <h3>Selected addresses</h3>
-
+      <p>Debug for selected addresses</p>
       {selectedAddresses.length > 0 ? (
         <pre>{JSON.stringify(selectedAddresses, null, 2)}</pre>
       ) : (
         <p>No addresses selected yet.</p>
       )}
+      */}
     </section>
   );
 }

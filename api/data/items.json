@@ -25,18 +25,23 @@
   "addresses": [
     {
       "id": "address-1",
-      "city": "Warsaw",
-      "street": "Marszalkowska"
+      "city": "Warszawa",
+      "street": "Marszałkowska"
     },
     {
       "id": "address-2",
-      "city": "Krakow",
-      "street": "Dluga"
+      "city": "Kraków",
+      "street": "Aleja Pokoju"
     },
     {
       "id": "address-3",
-      "city": "Gdansk",
-      "street": "Dlugi Targ"
+      "city": "Gdańsk",
+      "street": "Mariacka"
+    },
+    {
+      "id": "address-4",
+      "city": "Lublin",
+      "street": "Żołnierzy Niepodległej"
     }
   ]
 }
