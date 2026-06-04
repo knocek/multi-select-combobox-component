@@ -76,7 +76,7 @@ export function useMultiSelectCombobox<TItem>({
   }
 
   async function handleCreateItem() {
-    if (!canCreateItem || !canCreateItem) {
+    if (!onCreateItem || !canCreateItem) {
       return;
     }
 

@@ -1,11 +1,16 @@
 # Multi select combobox component
 
+![MultiSelect Combobox demo](/docs/mocup.gif)
+
 To run app use commands below:
 
 ```bash
+# clone repository
 git clone https://github.com/knocek/multi-select-combobox-component.git
 cd multi-select-combobox-component
+# install dependencies
 npm install
+# start frontend and API
 npm run dev
 ```
 
